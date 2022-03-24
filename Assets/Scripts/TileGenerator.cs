@@ -5,7 +5,7 @@ using UnityEngine;
 public class TileGenerator : MonoBehaviour
 {
     public GameObject tile;
-    public int time;
+    public float time;
     void Start()
     {
         InvokeRepeating("Spawn",0,time);
