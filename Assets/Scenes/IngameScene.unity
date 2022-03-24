@@ -182,9 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe928ccd3239c14693e7c327bc8b6f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swipeRange: 16
+  swipeRange: 13
   tapRange: 10
-  jumpForce: 20
+  jumpForce: 160
   player: {fileID: 279156497}
 --- !u!54 &279156497
 Rigidbody:
