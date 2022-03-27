@@ -23,7 +23,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         //InputsPC
-        /*if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             if (transform.position.x == -0.5f)
             {
@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         { 
             player.AddForce(0,jumpForce,0);
-        }*/
+        }
         //InputsMobile
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
