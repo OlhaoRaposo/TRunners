@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public Text fpsText;
     public float deltaTime;
     public int score;
+    public int scoreStr;
 
     void Start()
     {
@@ -21,10 +22,11 @@ public class UI : MonoBehaviour
         deltaTime += (Time.deltaTime - deltaTime) * 0.01f;
         float fps = 1.0f / deltaTime;
         fpsText.text = "FPS: " + Mathf.Ceil(fps).ToString ();
+        Mathf.Lerp(scoreStr, score, 20 * Time.deltaTime);
+        scoreTxt.text = "Score: " + score;
     }
     void Points()
     {
-        score = score + 9;
-        scoreTxt.text = "Score: " + score;
+        score = score + 1;
     }
 }
