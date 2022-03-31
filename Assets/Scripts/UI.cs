@@ -14,7 +14,7 @@ public class UI : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(Points());
+        InvokeRepeating("Points",0,1);
 
     }
     void Update()
@@ -22,11 +22,9 @@ public class UI : MonoBehaviour
         deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
         float fps = 1.0f / deltaTime;
         fpsText.text = "FPS: " + Mathf.Ceil(fps).ToString ();
-    }
-    IEnumerator Points()
+    } 
+    void Points()
     {
-        score = score + 360;
-        yield return new WaitForSeconds(1);
         scoreTxt.text = "Score: " + score;
     }
 }
