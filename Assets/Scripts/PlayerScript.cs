@@ -63,7 +63,6 @@ public class PlayerScript : MonoBehaviour
                         return;
                     }else
                         transform.Translate(-0.5f,0,0);
-                    
                 }
                 else if (Distance.x > swipeRange)
                 {
