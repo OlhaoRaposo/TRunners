@@ -94,7 +94,6 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
-
     //InputsPC
     private void InputsPc()
     {
