@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     public float swipeRange;
     public float tapRange;
     //Stats
+    public UI ui;
     private Vector3 jump;
     private Rigidbody rb;
     public float jumpForce;
