@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -755,10 +755,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1656312118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38fbff0fac37e354d8b7ed9f00f1dccc, type: 3}
+  m_Script: {fileID: 11500000, guid: 057e74778cac00a4d8c0a5350199a9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: lose
+  level: LoseScene
 --- !u!4 &1656312120
 Transform:
   m_ObjectHideFlags: 0
@@ -1188,7 +1188,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1656312119}
-        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_TargetAssemblyTypeName: ButtonsScript, Assembly-CSharp
         m_MethodName: OnButtonLoadScene
         m_Mode: 1
         m_Arguments:
