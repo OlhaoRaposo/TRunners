@@ -94,6 +94,10 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+<<<<<<< HEAD
+
+=======
+>>>>>>> ObstacleGen
     //InputsPC
     private void InputsPc()
     {
