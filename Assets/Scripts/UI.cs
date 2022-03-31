@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     public Text fpsText;
     public float deltaTime;
     public int score;
+<<<<<<< HEAD
     public int scoreStr;
 
     void Start()
@@ -28,5 +29,22 @@ public class UI : MonoBehaviour
     void Points()
     {
         score = score + 1;
+=======
+
+    void Start()
+    {
+        InvokeRepeating("Points",0,1);
+
+    }
+    void Update()
+    {
+        deltaTime += (Time.deltaTime - deltaTime) * 0.1f;
+        float fps = 1.0f / deltaTime;
+        fpsText.text = "FPS: " + Mathf.Ceil(fps).ToString ();
+    } 
+    void Points()
+    {
+        scoreTxt.text = "Score: " + score;
+>>>>>>> ObstacleGen
     }
 }
