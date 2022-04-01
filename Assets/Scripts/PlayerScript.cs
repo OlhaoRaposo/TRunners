@@ -23,6 +23,9 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody rb;
     public float jumpForce;
     public bool firstHit;
+
+    //Codigos Instanciados
+    public ButtonsScript BScripts;
     void Start()
     {
         //Starta Variaveis Stats/Posiçao Inicial
@@ -65,6 +68,8 @@ public class PlayerScript : MonoBehaviour
             {
                 //Chamar condiçao Derrota
                 Debug.Log("Derrota");
+                BScripts.SwitchToLose();
+                
             }
             //Seta Condiçoes 'First Hit'
             firstHit = true;

@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class ButtonsScript : MonoBehaviour
 {
-
-    public string level; //nome do level a mudar
+    
+    public string Menu, Ingame, Lose; //nomes de cenas a mudar
 
     // Troca de cena
-    public void OnButtonLoadScene()
+    public void SwitchToGame()
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(Ingame);
+    }
+    public void SwitchToLose()
+    {
+        SceneManager.LoadScene(Lose);
+    }
+    public void SwitchToMenu()
+    {
+        SceneManager.LoadScene(Menu);
     }
 }
