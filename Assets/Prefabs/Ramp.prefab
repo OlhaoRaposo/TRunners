@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3155333214692079111}
   m_Layer: 0
   m_Name: Ramp
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9244422d66eed044c93ca224bf15c4a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 6
   time: 5
 --- !u!64 &1682226299578671964
 MeshCollider:

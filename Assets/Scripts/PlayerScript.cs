@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using Random = UnityEngine.Random;
 
 public class PlayerScript : MonoBehaviour
@@ -10,6 +11,16 @@ public class PlayerScript : MonoBehaviour
     //Variaveis Input Pc
     PlayerPos currentPos;
      public enum PlayerPos {Left, Right, Middle};
+
+     private Vector3 leftPos = new Vector3(-.5f,0,0);
+     private Vector3 rightPos = new Vector3(.5f,0,0);
+     private Vector3 middlePos = new Vector3(0,0,0);
+     
+     
+     [Range(0,100)]
+     public float smooth;
+     
+
     //Variaveis Input Mobile
     private Vector2 startTouchPosition;
     private Vector2 currentPosition;
@@ -18,7 +29,6 @@ public class PlayerScript : MonoBehaviour
     public float swipeRange;
     public float tapRange;
     //Stats
-    public UI ui;
     private Vector3 jump;
     private Rigidbody rb;
     public float jumpForce;
@@ -98,20 +108,38 @@ public class PlayerScript : MonoBehaviour
                 }
             }
         }
+
+        
+        
     }
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("Item"))
+        {
+            Destroy(col.gameObject);
+            GameManager.instance.coin = GameManager.instance.coin + 1;
+            Debug.Log(GameManager.instance.coin);
+        }
+    }
+
     //InputsPC
+    //AdequarLerp
     private void InputsPc()
     {
+        
         if (Input.GetKeyDown(KeyCode.A) && currentPos != PlayerPos.Left)
         {
+            
             if (currentPos == PlayerPos.Right)
             {
-                this.transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                //transform.position = Vector3.Lerp(rightPos, middlePos,smooth );
                 currentPos = PlayerPos.Middle;
             }
             else
             {
-                this.transform.position = new Vector3(-.5f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(-.5f, transform.position.y, transform.position.z);
+                //transform.position = Vector3.Lerp(middlePos, leftPos,smooth);
                 currentPos = PlayerPos.Left;
             }
         }
@@ -120,12 +148,14 @@ public class PlayerScript : MonoBehaviour
         {
             if (currentPos == PlayerPos.Left)
             {
-                this.transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                transform.position = new Vector3(0, transform.position.y, transform.position.z);
+                //transform.position = Vector3.Lerp(leftPos, middlePos,smooth);
                 currentPos = PlayerPos.Middle;
             }
             else
             {
-                this.transform.position = new Vector3(.5f, transform.position.y, transform.position.z);
+                transform.position = new Vector3(.5f, transform.position.y, transform.position.z);
+                //transform.position = Vector3.Lerp(middlePos, rightPos,smooth);
                 currentPos = PlayerPos.Right;
             }
         }
